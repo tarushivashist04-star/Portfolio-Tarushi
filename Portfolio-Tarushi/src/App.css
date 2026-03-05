@@ -1,0 +1,466 @@
+/* Main Layout */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  /* golden bottom border */
+  border-bottom: 1px solid var(--hp-gold-glow);
+}
+/* Logo styling */
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--hp-gold);/* golden color */
+  font-weight: 700;
+  /* glowing effect */
+  text-shadow: 0 0 10px var(--hp-gold-glow);
+}
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+/* Navigation link styling */
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  /* smooth hover effect */
+  transition: all 0.3s;
+}
+
+.nav-links a:hover {
+  text-shadow: 0 0 8px var(--hp-gold);
+  color: #fff;
+}
+
+/* Common Section Styles */
+section {
+  padding: 6rem 5% 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  animation: glow-pulse 3s infinite alternate;/* glowing title animation */
+}
+
+.magical-border {
+  border: 1px solid var(--hp-gold);
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1), 0 0 20px rgba(212, 175, 55, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  /* dark transparent background */
+  background: rgba(13, 13, 13, 0.7);
+  /* golden glow */
+  backdrop-filter: blur(5px);
+}
+
+/* Home Section */
+.home-section {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+   /*text above sparkles */
+  z-index: 10;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--hp-accent);/* sets the text color using the accent color variable */
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px var(--hp-gold);/* glowing title */
+}
+/*profession text */
+.hero-role {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+}
+
+.hero-intro {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  color: #bbb;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: rgba(212, 175, 55, 0.1);
+/* 2px solid golden border andtheme color */
+  border: 2px solid var(--hp-gold);
+  font-weight: bold;
+}
+
+.btn-secondary {
+  /* thin glowing golden border for magical effect */
+  border: 1px solid var(--hp-gold-glow);
+  color: #ccc;
+}
+
+/* Sparkles Animation */
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+/* Individual sparkle particle */
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px var(--hp-gold);/*glowing golden shadow around the element */
+  animation: magical-float 4s infinite linear;/*floating animation continuously */
+}
+/* Different sparkle positions */
+.s1 {
+  left: 20%;
+  bottom: 10%;
+  animation-delay: 0s;
+}
+
+.s2 {
+  left: 70%;
+  bottom: 20%;
+  animation-delay: 1.5s;
+  width: 3px;
+  height: 3px;
+}
+
+.s3 {
+  left: 85%;
+  bottom: 50%;
+  animation-delay: 2.8s;
+  width: 5px;
+  height: 5px;
+}
+
+/* About Section */
+
+.about-section{
+  width:100%;
+  min-height:100vh;
+  padding:120px 5%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  background:black;
+}
+.about-content {
+   width:100%;
+}
+
+.about-card{
+  width:100%;       /* full page width */
+  padding:60px;
+
+  border-radius:15px;
+  border:2px solid #d4af37;
+
+  background:rgba(13,13,13,0.8);
+
+  box-shadow:0 0 25px rgba(212,175,55,0.3);
+
+  color:white;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.about-card p {
+   margin-bottom:25px;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  /* responsive grid columns that adjust automatically */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--hp-gold-glow);
+  border-radius: 8px;
+  background: rgba(13, 13, 13, 0.8);
+  transition: all 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.skill-card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.skill-card:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.skill-card:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 0 30px var(--hp-gold-glow);
+  border-color: var(--hp-gold);
+}
+
+.skill-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px var(--hp-gold));
+}
+
+.skill-card h3 {
+  font-family: 'Cinzel', serif;
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--hp-accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: var(--hp-gold);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Contact Section */
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-content p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #ccc;
+}
+
+.contact-links {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:25px;
+  margin-top:40px;
+}
+
+.magical-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--hp-gold);
+  border-radius: 30px;
+  font-size: 1.2rem;
+  background: rgba(13, 13, 13, 0.8);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.magical-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--hp-gold);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  margin-top: auto;
+  font-family: 'Cinzel', serif;
+  color: var(--hp-accent);
+}
+/* contact buttons */
+
+.contact-btn{
+  width:350px;          /* same width for all */
+  padding:15px 20px;
+  border-radius:40px;
+  border:2px solid #d4af37;
+  color:#d4af37;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:16px;
+  transition:0.3s;
+}
+
+/* hover effect */
+
+.contact-btn:hover{
+  background:#d4af37;
+  color:black;
+  box-shadow:0 0 15px #d4af37;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-role {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size:3rem;
+  color:#d4af37;
+  margin-bottom:50px;
+  text-align:center;
+  }
+
+  .nav-links {
+    display: none;
+    /* Can implement hamburger(three-line icon used in mobile navigation.) later */
+  }
+}
+/* Me Section (The Way I Build) */
+
+.Me-section{
+  width:100%;
+  min-height:100vh;
+  padding:80px 5%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* align title to left */
+
+  background:black;
+}
+
+/* Title */
+
+.Me-title{
+  font-size:2.5rem;
+  color:#d4af37;
+  margin-bottom:30px;
+}
+
+/* Content container */
+
+.Me-content{
+  width:100%;
+}
+
+/* Card */
+
+.Me-card{
+  width:100%;               /* full width */
+  padding:50px;
+  border-radius:15px;
+
+  border:2px solid #d4af37;
+
+  background:rgba(13,13,13,0.8);
+
+  box-shadow:0 0 20px rgba(212,175,55,0.3);
+
+  color:white;
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* Paragraph spacing */
+
+.Me-card p{
+  margin-bottom:20px;
+}
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
