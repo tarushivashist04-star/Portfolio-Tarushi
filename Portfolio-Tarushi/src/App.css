@@ -1,3 +1,99 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme Variables */
+:root {
+  --hp-dark: #0d0d0d;
+  --hp-darker: #050505;
+  --hp-gold: #d4af37;
+  --hp-gold-glow: rgba(212, 175, 55, 0.6);
+  --hp-text: #e0e0e0;
+  --hp-accent: #c0a030;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--hp-text);
+  background-color: var(--hp-dark);
+}
+
+/* Body Styling */
+body {
+  background-color: var(--hp-dark);
+  background-image: radial-gradient(circle at center, var(--hp-dark), var(--hp-darker));
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Magical Animations */
+
+@keyframes magical-float {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0% { text-shadow: 0 0 5px var(--hp-gold-glow); }
+  50% { text-shadow: 0 0 20px var(--hp-gold), 0 0 30px var(--hp-gold); }
+  100% { text-shadow: 0 0 5px var(--hp-gold-glow); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+  color: var(--hp-gold);
+  letter-spacing: 2px;
+}
+
+/* Links */
+
+a {
+  color: var(--hp-gold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px var(--hp-gold);
+}
+
+/* Buttons */
+
+button {
+  background: transparent;
+  color: var(--hp-gold);
+  border: 1px solid var(--hp-gold);
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--hp-gold-glow);
+}
+
+button:hover {
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 15px var(--hp-gold);
+  transform: translateY(-2px);
+}
+
 /* Main Layout */
 .app-container {
   min-height: 100vh;
@@ -463,4 +559,4 @@ footer {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
+} 

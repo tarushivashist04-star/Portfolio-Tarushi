@@ -8,12 +8,12 @@ function Projects() {
         },
         {
             title: 'Ecommerce store',
-            description: 'Clonesof Ecommerce Website',
+            description: 'Clones of Ecommerce Website',
             tags: ['HTML5', 'CSS3', 'JavaScript'],
            
         },
         {
-            title: 'Smart Health AI Syste',
+            title: 'Smart Health AI System',
             description: 'Real-Time hospital navigation system.',
             tags: ['React', 'CSS Animations','API'],
     
